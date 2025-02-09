@@ -1,5 +1,8 @@
 // Main container for the calculator
 const calculator = document.querySelector(".container");
+let a = null;
+let b = null;
+let operator = "";
 
 // Create rows to house buttons and text boxes
 const rows = [];
