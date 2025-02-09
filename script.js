@@ -20,3 +20,19 @@ result = document.createElement("div");
 result.classList.add("result");
 result.textContent = "3";
 rows[1].appendChild(result);
+
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  return a / b;
+}
