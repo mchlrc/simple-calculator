@@ -37,7 +37,11 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return a / b;
+  if (b === 0) {
+    return "DIVBY0";
+  } else {
+    return a / b;
+  }
 }
 
 function operate(a, b, operator) {
