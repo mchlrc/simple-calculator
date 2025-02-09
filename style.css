@@ -6,6 +6,13 @@ body {
   justify-content: space-evenly;
 }
 
+button {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  text-align: center;
+}
+
 .container {
   background-color: dimgray;
   outline: 1px solid black;
@@ -32,6 +39,9 @@ body {
 
 .row {
   flex-direction: row;
+  align-items: center;
+  margin: 5px;
+  justify-content: space-evenly;
 }
 
 .number {
