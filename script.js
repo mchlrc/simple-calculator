@@ -50,7 +50,7 @@ function operate(a, b, operator) {
     case "x":
       result = multiply(a, b);
     case "÷":
-      divide(a, b);
+      result = divide(a, b);
     default:
       result = "ERROR";
   }
