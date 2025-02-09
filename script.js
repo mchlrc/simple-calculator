@@ -39,3 +39,20 @@ function multiply(a, b) {
 function divide(a, b) {
   return a / b;
 }
+
+function operate(a, b, operator) {
+  let result = "";
+  switch (operator) {
+    case "+":
+      result = add(a, b);
+    case "-":
+      result = subtract(a, b);
+    case "x":
+      result = multiply(a, b);
+    case "÷":
+      divide(a, b);
+    default:
+      result = "ERROR";
+  }
+  return result;
+}
