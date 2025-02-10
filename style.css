@@ -4,13 +4,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  font-size: large;
 }
 
 button {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   margin: 5px;
   text-align: center;
+  align-content: center;
 }
 
 .container {
@@ -26,6 +28,7 @@ button {
   margin: 0 5px 0 5px;
   min-width: 60px;
   min-height: 20px;
+  font-size: larger;
 }
 
 .result {
@@ -35,13 +38,15 @@ button {
   margin: 0 5px 0 5px;
   min-width: 60px;
   min-height: 20px;
+  font-size: x-large;
 }
 
 .row {
+  display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   margin: 5px;
-  justify-content: space-evenly;
+  justify-content: right;
 }
 
 .number {
