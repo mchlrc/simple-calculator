@@ -1,7 +1,7 @@
 // Main container for the calculator
 const calculator = document.querySelector(".container");
-let a = null;
-let b = null;
+let a = [];
+let b = [];
 let operator = "";
 
 // Create rows to house buttons and text boxes
@@ -15,12 +15,12 @@ for (let i = 0; i < 7; i++) {
 // Create text box for input
 expression = document.createElement("div");
 expression.classList.add("expression");
-expression.textContent = "1 + 2";
+expression.textContent = "";
 
 // Create text box for input
 const result = document.createElement("div");
 result.classList.add("result");
-result.textContent = "3";
+result.textContent = "";
 
 // Create number buttons
 const numbers = [];
@@ -29,6 +29,10 @@ for (let num = 0; num < 10; num++) {
   numbers[num].classList.add("number");
   numbers[num].textContent = num;
 }
+
+decimalButton = document.createElement("button");
+decimalButton.classList.add("number");
+decimalButton.textContent = ".";
 
 // Create Operators
 plusButton = document.createElement("button");
@@ -45,11 +49,21 @@ multiplicationButton.textContent = "x";
 
 divisionButton = document.createElement("button");
 divisionButton.classList.add("operator");
-divisionButton.textContent = "÷";
+divisionButton.textContent = String.fromCharCode(247); // Divide symbol
 
 equalsButton = document.createElement("button");
 equalsButton.classList.add("operator");
 equalsButton.textContent = "=";
+
+// Delete button
+deleteButton = document.createElement("button");
+deleteButton.classList.add("functional");
+deleteButton.textContent = "DEL";
+
+// Clear All button
+allClearButton = document.createElement("button");
+allClearButton.classList.add("functional");
+allClearButton.textContent = "AC";
 
 // Build row 1
 rows[0].appendChild(expression);
@@ -58,6 +72,8 @@ rows[0].appendChild(expression);
 rows[1].appendChild(result);
 
 // Build row 3
+rows[2].appendChild(deleteButton);
+rows[2].appendChild(allClearButton);
 rows[2].appendChild(divisionButton);
 
 // Build row 4
@@ -80,6 +96,7 @@ rows[5].appendChild(plusButton);
 
 // Build row 7
 rows[6].appendChild(numbers[0]);
+rows[6].appendChild(decimalButton);
 rows[6].appendChild(equalsButton);
 
 function add(a, b) {
