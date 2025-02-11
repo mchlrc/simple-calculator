@@ -4,6 +4,7 @@ let left = [];
 let right = [];
 let operator = "";
 let result = 0;
+let lastPress = "";
 
 // Create rows to house buttons and text boxes
 const rows = [];
@@ -115,6 +116,7 @@ for (let num of numberButtons) {
       right.push(event.target.textContent);
       updateExpression();
     }
+    lastPress = event.target.textContent;
   });
 }
 
@@ -122,8 +124,19 @@ for (let operatorButton of operatorButtons) {
   operatorButton.addEventListener("click", (event) => {
     if (operator === "") {
       operator = event.target.textContent;
+      updateExpression();
+    } else if (lastPress === "=") {
+      operator = event.target.textContent;
+      console.log(`result exp ${result}`);
+      console.log(`result float ${Number.parseFloat(result)}`);
+      let tempArr = String(Number.parseFloat(result)).split("");
+      left = tempArr.slice();
+      result = 0;
+      right = [];
+      updateExpression();
+      updateResult();
     }
-    updateExpression();
+    lastPress = event.target.textContent;
   });
 }
 
@@ -140,24 +153,28 @@ decimalButton.addEventListener("click", (event) => {
       updateExpression();
     }
   }
+  lastPress = event.target.textContent;
 });
 
 // Add event listener to equals button
-equalsButton.addEventListener("click", () => {
+equalsButton.addEventListener("click", (event) => {
   if (left.length > 0 && right.length > 0 && operator.length > 0) {
     result = operate(left, right, operator);
     updateResult();
   }
+  lastPress = event.target.textContent;
 });
 
 // Add event listener to clear all button
-allClearButton.addEventListener("click", () => {
+allClearButton.addEventListener("click", (event) => {
   clearAll();
+  lastPress = event.target.textContent;
 });
 
 // Add event listener to delete button
-deleteButton.addEventListener("click", () => {
+deleteButton.addEventListener("click", (event) => {
   backSpace();
+  lastPress = event.target.textContent;
 });
 
 function add(a, b) {
