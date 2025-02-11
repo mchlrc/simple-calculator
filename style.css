@@ -24,20 +24,18 @@ button {
 .expression {
   text-align: right;
   color: lightgray;
-  margin-top: 0;
   margin: 0 5px 0 5px;
-  min-width: 60px;
-  min-height: 20px;
+  min-width: 30px;
+  min-height: 30px;
   font-size: larger;
 }
 
 .result {
   text-align: right;
   color: white;
-  margin-top: 0;
   margin: 0 5px 0 5px;
   min-width: 60px;
-  min-height: 20px;
+  min-height: 40px;
   font-size: x-large;
 }
 
