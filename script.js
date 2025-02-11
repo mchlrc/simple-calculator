@@ -127,8 +127,6 @@ for (let operatorButton of operatorButtons) {
       updateExpression();
     } else if (lastPress === "=") {
       operator = event.target.textContent;
-      console.log(`result exp ${result}`);
-      console.log(`result float ${Number.parseFloat(result)}`);
       let tempArr = String(Number.parseFloat(result)).split("");
       left = tempArr.slice();
       result = 0;
