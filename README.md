@@ -1,2 +1,3 @@
-# odin-calculator
-Calculator Assignment from the Odin Project
+# simple-calculator
+
+This is a simple web-based calculator.
